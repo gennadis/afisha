@@ -27,5 +27,22 @@ class Place(models.Model):
         decimal_places=6,
     )
 
+    def get_place_images(self) -> list[str]:
+        return [image.file for image in Image.objects.filter(place=self.pk).all()]
+
     def __str__(self) -> str:
         return f"{self.title} @ {self.longitude}, {self.latitude}"
+
+
+class Image(models.Model):
+    order = models.PositiveSmallIntegerField(
+        verbose_name="Image order",
+        default=0,
+    )
+    place = models.ForeignKey(
+        to=Place,
+        on_delete=models.CASCADE,
+    )
+    file = models.ImageField(
+        verbose_name="Place photo",
+    )
