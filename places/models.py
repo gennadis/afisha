@@ -47,3 +47,9 @@ class Image(models.Model):
         verbose_name="Place photo",
         upload_to="media/places",
     )
+
+    class Meta:
+        ordering = ["place", "order"]
+
+    def __str__(self) -> str:
+        return f"{self.order} {self.place}"
