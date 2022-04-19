@@ -45,7 +45,7 @@ class Image(models.Model):
     )
     file = models.ImageField(
         verbose_name="Place photo",
-        upload_to="media/places",
+        upload_to="places/",
     )
 
     class Meta:

@@ -31,9 +31,7 @@ class Migration(migrations.Migration):
                 ),
                 (
                     "file",
-                    models.ImageField(
-                        upload_to="media/places", verbose_name="Place photo"
-                    ),
+                    models.ImageField(upload_to="places/", verbose_name="Place photo"),
                 ),
                 (
                     "place",
