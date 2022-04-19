@@ -32,7 +32,7 @@ DEBUG = os.getenv("DJANGO_DEBUG", default=False)
 
 # For example: 'DJANGO_ALLOWED_HOSTS=localhost 127.0.0.1 [::1]'
 ALLOWED_HOSTS = os.getenv("DJANGO_ALLOWED_HOSTS", default="127.0.0.1").split(" ")
-print(ALLOWED_HOSTS)
+
 
 # Application definition
 
@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
+    "places.apps.PlacesConfig",
 ]
 
 MIDDLEWARE = [
