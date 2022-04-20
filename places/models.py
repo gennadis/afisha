@@ -38,6 +38,7 @@ class Image(models.Model):
     order = models.PositiveSmallIntegerField(
         verbose_name="Image order",
         default=0,
+        db_index=True,
     )
     place = models.ForeignKey(
         to=Place,
@@ -50,7 +51,7 @@ class Image(models.Model):
     )
 
     class Meta:
-        ordering = ["place", "order"]
+        ordering = ["order", "place"]
 
     def __str__(self) -> str:
         return f"{self.order} {self.place}"
