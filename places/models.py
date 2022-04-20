@@ -28,7 +28,7 @@ class Place(models.Model):
     )
 
     def get_place_images(self) -> list[str]:
-        return [image.file for image in Image.objects.filter(place=self.pk).all()]
+        return [image.file.url for image in self.images.all()]
 
     def __str__(self) -> str:
         return f"{self.title} @ {self.longitude}, {self.latitude}"
@@ -42,6 +42,7 @@ class Image(models.Model):
     place = models.ForeignKey(
         to=Place,
         on_delete=models.CASCADE,
+        related_name="images",
     )
     file = models.ImageField(
         verbose_name="Place photo",
