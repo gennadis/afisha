@@ -8,6 +8,7 @@ from places.models import Image, Place
 class SortableImageInline(SortableInlineAdminMixin, admin.TabularInline):
     model = Image
     readonly_fields = ["preview_image"]
+    extra = 0
 
     def preview_image(self, obj):
         max_height = 200
