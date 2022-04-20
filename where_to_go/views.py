@@ -8,27 +8,23 @@ from places.models import Place
 def index(request):
     places_collection = {
         "type": "FeatureCollection",
-        "features": [
-            {
-                "type": "Feature",
-                "geometry": {"type": "Point", "coordinates": [37.62, 55.793676]},
-                "properties": {
-                    "title": "«Легенды Москвы",
-                    "placeId": "moscow_legends",
-                    "detailsUrl": "https://raw.githubusercontent.com/devmanorg/where-to-go-frontend/master/places/moscow_legends.json",
-                },
-            },
-            {
-                "type": "Feature",
-                "geometry": {"type": "Point", "coordinates": [37.64, 55.753676]},
-                "properties": {
-                    "title": "Крыши24.рф",
-                    "placeId": "roofs24",
-                    "detailsUrl": "https://raw.githubusercontent.com/devmanorg/where-to-go-frontend/master/places/roofs24.json",
-                },
-            },
-        ],
+        "features": [],
     }
+
+    for place in Place.objects.all():
+        place_features = {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [place.latitude, place.longitude],
+            },
+            "properties": {
+                "title": place.title,
+                "placeId": place.pk,
+                "detailsUrl": "https://raw.githubusercontent.com/devmanorg/where-to-go-frontend/master/places/moscow_legends.json",
+            },
+        }
+        places_collection["features"].append(place_features)
 
     return render(
         request,
