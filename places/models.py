@@ -27,6 +27,9 @@ class Place(models.Model):
         decimal_places=6,
     )
 
+    class Meta:
+        ordering = ["title"]
+
     def get_place_images(self) -> list[str]:
         return [image.file.url for image in self.images.all()]
 
