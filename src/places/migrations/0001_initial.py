@@ -7,19 +7,42 @@ class Migration(migrations.Migration):
 
     initial = True
 
-    dependencies = [
-    ]
+    dependencies = []
 
     operations = [
         migrations.CreateModel(
-            name='Place',
+            name="Place",
             fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('title', models.CharField(max_length=200, verbose_name='Place title')),
-                ('description_short', models.TextField(blank=True, max_length=500, null=True, verbose_name='Short description')),
-                ('description_long', models.TextField(blank=True, max_length=5000, null=True, verbose_name='Long description')),
-                ('latitude', models.DecimalField(decimal_places=6, max_digits=9)),
-                ('longitude', models.DecimalField(decimal_places=6, max_digits=9)),
+                (
+                    "id",
+                    models.BigAutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                ("title", models.CharField(max_length=200, verbose_name="Place title")),
+                (
+                    "description_short",
+                    models.TextField(
+                        blank=True,
+                        max_length=500,
+                        null=True,
+                        verbose_name="Short description",
+                    ),
+                ),
+                (
+                    "description_long",
+                    models.TextField(
+                        blank=True,
+                        max_length=5000,
+                        null=True,
+                        verbose_name="Long description",
+                    ),
+                ),
+                ("latitude", models.FloatField(verbose_name="Latitude")),
+                ("longitude", models.FloatField(verbose_name="Longitude")),
             ],
         ),
     ]

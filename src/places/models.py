@@ -19,17 +19,8 @@ class Place(models.Model):
         blank=True,
         null=True,
     )
-    latitude = models.DecimalField(
-        max_digits=9,
-        decimal_places=6,
-    )
-    longitude = models.DecimalField(
-        max_digits=9,
-        decimal_places=6,
-    )
-
-    class Meta:
-        ordering = ["title"]
+    latitude = models.FloatField(verbose_name="Latitude")
+    longitude = models.FloatField(verbose_name="Longitude")
 
     def get_place_images(self) -> list[str]:
         return [image.file.url for image in self.images.all()]
