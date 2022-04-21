@@ -1,5 +1,5 @@
 # pull official base image
-FROM python:3.9-slim-buster
+FROM python:3.9-alpine
 
 # set work directory
 WORKDIR /usr/src/app
@@ -9,9 +9,9 @@ ENV PYTHONDONTWRITEBYTECODE 1
 ENV PYTHONUNBUFFERED 1
 
 
-# install psycopg2 dependencies
+# install pillow and psycopg2 dependencies
 RUN apk update \
-    && apk add postgresql-dev gcc python3-dev musl-dev
+    && apk add postgresql-dev gcc python3-dev musl-dev jpeg-dev zlib-dev
 
 # install dependencies
 RUN pip install --upgrade pip
