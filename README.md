@@ -97,7 +97,7 @@ python manage.py createsuperuser
 
 8. Run gunicorn web server
 ```bash
-gunicorn where_to_go.wsgi
+python manage.py runserver
 ```
 
 # Usage
