@@ -8,13 +8,6 @@ WORKDIR /usr/src/app
 ENV PYTHONDONTWRITEBYTECODE 1
 ENV PYTHONUNBUFFERED 1
 
-# create the appropriate directories
-ENV HOME=/home/app
-ENV APP_HOME=/home/app/web
-RUN mkdir $APP_HOME
-RUN mkdir $APP_HOME/staticfiles
-WORKDIR $APP_HOME
-
 # install pillow and psycopg2 dependencies
 RUN apk update \
     && apk add postgresql-dev gcc python3-dev musl-dev jpeg-dev zlib-dev
