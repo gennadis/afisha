@@ -5,7 +5,7 @@ docker-compose -f docker-compose.yaml up -d --build
 
 DOWN
 ```bash
-docker-compose -f docker-compose.yaml down -v
+docker-compose -f docker-compose.yaml down
 ```
 
 
@@ -14,6 +14,7 @@ Run the migrations and collect static files:
 ```bash
 docker-compose -f docker-compose.yaml exec web python manage.py migrate
 docker-compose -f docker-compose.yaml exec web python manage.py collectstatic --no-input --clear
+docker-compose -f docker-compose.yaml exec web python manage.py createsuperuser
 ```
 Check the logs:
 ```bash
