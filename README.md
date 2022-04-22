@@ -11,27 +11,27 @@ git clone https://github.com/gennadis/afisha.git
 cd afisha
 ```
 
-2. Prepare environment variables:
-	2.1 Rename `example.env` to `.env` and fill it accordingly
-	```bash
-		DJANGO_DEBUG=0                # [0, 1]
-		DJANGO_SECRET_KEY=<secret>
-		DJANGO_ALLOWED_HOSTS=<host1>  # localhost 127.0.0.1 [::1]
+2. Prepare environment variables:  
+- Rename `example.env` to `.env` and fill it accordingly
+```bash
+DJANGO_DEBUG=0                # [0, 1]
+DJANGO_SECRET_KEY=<secret>
+DJANGO_ALLOWED_HOSTS=<host1>  # localhost 127.0.0.1 [::1]
 
-		SQL_ENGINE=<engine>           # django.db.backends.postgresql
-		SQL_DATABASE=<database>
-		SQL_USER=<user>
-		SQL_PASSWORD=<password>
-		SQL_HOST=<host>
-		SQL_PORT=<port>               # 5432
-	```
+SQL_ENGINE=<engine>           # django.db.backends.postgresql
+SQL_DATABASE=<database>
+SQL_USER=<user>
+SQL_PASSWORD=<password>
+SQL_HOST=<host>
+SQL_PORT=<port>               # 5432
+```
 
-	2.2 Rename `example.env.db` to `.env.db` and fill it accordingly
-	```bash
-		POSTGRES_USER=<user>
-		POSTGRES_PASSWORD=<password>
-		POSTGRES_DB=<db>
-	```
+- Rename `example.env.db` to `.env.db` and fill it accordingly
+```bash
+POSTGRES_USER=<user>
+POSTGRES_PASSWORD=<password>
+POSTGRES_DB=<db>
+```
 
 3. Build and spin up the containers
 *Database migration and static collection processes are run automatically*
@@ -49,22 +49,22 @@ docker compose -f docker-compose.yaml exec web python manage.py createsuperuser
 docker compose -f docker-compose.yaml exec web python manage.py load_place https://raw.githubusercontent.com/devmanorg/where-to-go-places/master/places/Антикафе%20Bizone.json
 ```
 
-	The structure of `json` file:
-	```bash
-	{
-		"title": "Останкинская телебашня",
-		"imgs": [
-			"https://raw.githubusercontent.com/devmanorg/where-to-go-places/master/media/1e3b20361050ae13b3aaf7ddcef76e7c.jpg",
-			"https://raw.githubusercontent.com/devmanorg/where-to-go-places/master/media/adc544d7acc9be889cfec73064bcfb06.jpg",
-		],
-		"description_short": "Останкинская телебашня — одна из главных достопримечательностей Москвы...",
-		"description_long": "<p>За последнее время внутри башни многое изменилось...</p>",
-		"coordinates": {
-			"lng": "37.61171499999998",
-			"lat": "55.81972699999998"
-		}
-	}
-	```
+The structure of `json` file:
+```bash
+{
+    "title": "Останкинская телебашня",
+    "imgs": [
+        "https://raw.githubusercontent.com/devmanorg/where-to-go-places/master/media/1e3b20361050ae13b3aaf7ddcef76e7c.jpg",
+        "https://raw.githubusercontent.com/devmanorg/where-to-go-places/master/media/adc544d7acc9be889cfec73064bcfb06.jpg",
+    ],
+    "description_short": "Останкинская телебашня — одна из главных достопримечательностей Москвы...",
+    "description_long": "<p>За последнее время внутри башни многое изменилось...</p>",
+    "coordinates": {
+        "lng": "37.61171499999998",
+        "lat": "55.81972699999998"
+    }
+}
+```
 
 
 ## Installation
