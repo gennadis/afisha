@@ -1,8 +1,6 @@
 # Afisha Service
 This project helps maintaining information about local sights: location, description, photos, etc.
-You can install and run it locally or use deployed project:
-- [fronend](http://62.109.2.234:1337)
-- [backend](http://62.109.2.234:1337/admin)
+You can install and run it locally or use [deployed project](http://62.109.2.234:1337)
 
 ![Demo](demo.gif)
 
