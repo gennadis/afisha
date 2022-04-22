@@ -41,8 +41,8 @@ class Migration(migrations.Migration):
                         verbose_name="Long description",
                     ),
                 ),
-                ("latitude", models.FloatField(verbose_name="Latitude")),
                 ("longitude", models.FloatField(verbose_name="Longitude")),
+                ("latitude", models.FloatField(verbose_name="Latitude")),
             ],
         ),
     ]

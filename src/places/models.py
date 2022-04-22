@@ -19,8 +19,8 @@ class Place(models.Model):
         blank=True,
         null=True,
     )
-    latitude = models.FloatField(verbose_name="Latitude")
     longitude = models.FloatField(verbose_name="Longitude")
+    latitude = models.FloatField(verbose_name="Latitude")
 
     def get_place_images(self) -> list[str]:
         return [image.file.url for image in self.images.all()]
