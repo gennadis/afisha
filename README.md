@@ -47,7 +47,7 @@ docker compose -f docker-compose.yaml exec web python manage.py createsuperuser
 
 5. Load some data from `json` files:
 ```bash
-docker compose -f docker-compose.yaml exec python manage.py load_place http://адрес/файла.json
+docker compose -f docker-compose.yaml exec web python manage.py load_place http://адрес/файла.json
 ```
 
 The structure of imported `json` file:
