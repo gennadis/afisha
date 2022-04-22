@@ -1,6 +1,8 @@
 # Afisha Service
 This project helps maintaining information about local sights: location, description, photos, etc.
-You can install and run it locally or use **[deployed project](http://62.109.2.234:1337)**.
+You can install and run it locally or use deployed project:
+- [fronend](http://62.109.2.234:1337)
+- [backend](http://62.109.2.234:1337/admin)
 
 ![Demo](demo.gif)
 
@@ -87,16 +89,16 @@ pip install -r requirements.txt
 
 4. Rename `example.env` to `.env` and fill your secrets in it.  
 ```bash
-	DJANGO_DEBUG=0  # [0, 1]
-	DJANGO_SECRET_KEY=<secret>
-	DJANGO_ALLOWED_HOSTS=<host1 host2>  #localhost 127.0.0.1 [::1]
+DJANGO_DEBUG=0  # [0, 1]
+DJANGO_SECRET_KEY=<secret>
+DJANGO_ALLOWED_HOSTS=<host1 host2>  #localhost 127.0.0.1 [::1]
 
-	SQL_ENGINE=<engine>  # django.db.backends.postgresql
-	SQL_DATABASE=<database>
-	SQL_USER=<user>
-	SQL_PASSWORD=<password>
-	SQL_HOST=<host>
-	SQL_PORT=<port> # 5432
+SQL_ENGINE=<engine>  # django.db.backends.postgresql
+SQL_DATABASE=<database>
+SQL_USER=<user>
+SQL_PASSWORD=<password>
+SQL_HOST=<host>
+SQL_PORT=<port> # 5432
 ```
 
 5. Rename `example.env.db` to `.env.db` and fill your secrets in it.  
