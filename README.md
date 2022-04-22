@@ -45,6 +45,28 @@ docker compose -f docker-compose.yaml up -d --build
 docker compose -f docker-compose.yaml exec web python manage.py createsuperuser
 ```
 
+5. Load some data from `json` files:
+```bash
+docker compose -f docker-compose.yaml exec python manage.py load_place http://адрес/файла.json
+```
+
+The structure of imported `json` file:
+```bash
+{
+    "title": "Останкинская телебашня",
+    "imgs": [
+        "https://raw.githubusercontent.com/devmanorg/where-to-go-places/master/media/1e3b20361050ae13b3aaf7ddcef76e7c.jpg",
+        "https://raw.githubusercontent.com/devmanorg/where-to-go-places/master/media/adc544d7acc9be889cfec73064bcfb06.jpg",
+    ],
+    "description_short": "Останкинская телебашня — одна из главных достопримечательностей Москвы...",
+    "description_long": "<p>За последнее время внутри башни многое изменилось...</p>",
+    "coordinates": {
+        "lng": "37.61171499999998",
+        "lat": "55.81972699999998"
+    }
+}
+```
+
 
 ## Installation
 1. Clone project
