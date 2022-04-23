@@ -17,6 +17,7 @@ cd afisha
 DJANGO_DEBUG=0                # [0, 1]
 DJANGO_SECRET_KEY=<secret>
 DJANGO_ALLOWED_HOSTS=<host1>  # localhost 127.0.0.1 [::1]
+CSRF_TRUSTED_ORIGINS=<host1>  # localhost 127.0.0.1 [::1]
 
 SQL_ENGINE=<engine>           # django.db.backends.postgresql
 SQL_DATABASE=<database>
@@ -90,6 +91,7 @@ pip install -r requirements.txt
 DJANGO_DEBUG=0  # [0, 1]
 DJANGO_SECRET_KEY=<secret>
 DJANGO_ALLOWED_HOSTS=<host1 host2>  #localhost 127.0.0.1 [::1]
+CSRF_TRUSTED_ORIGINS=<host1>  # localhost 127.0.0.1 [::1]
 
 SQL_ENGINE=<engine>  # django.db.backends.postgresql
 SQL_DATABASE=<database>
