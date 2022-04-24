@@ -14,24 +14,24 @@ cd afisha
 2. Prepare environment variables:  
 - Rename `example.env` to `.env` and fill it accordingly
 ```bash
-DJANGO_DEBUG=0                # [0, 1]
-DJANGO_SECRET_KEY=<secret>
-DJANGO_ALLOWED_HOSTS=<host1>  # localhost 127.0.0.1 [::1]
-CSRF_TRUSTED_ORIGINS=<host1>  # localhost 127.0.0.1 [::1]
+DJANGO_DEBUG=1
+DJANGO_SECRET_KEY=secret_key
+DJANGO_ALLOWED_HOSTS=localhost 127.0.0.1 [::1]
+CSRF_TRUSTED_ORIGINS=http://localhost:1337
 
-SQL_ENGINE=<engine>           # django.db.backends.postgresql
-SQL_DATABASE=<database>
-SQL_USER=<user>
-SQL_PASSWORD=<password>
-SQL_HOST=<host>
-SQL_PORT=<port>               # 5432
+SQL_ENGINE=django.db.backends.postgresql
+SQL_DATABASE=hello_django_dev
+SQL_USER=hello_django
+SQL_PASSWORD=hello_django
+SQL_HOST=db
+SQL_PORT=5432
 ```
 
 - Rename `example.env.db` to `.env.db` and fill it accordingly
 ```bash
-POSTGRES_USER=<user>
-POSTGRES_PASSWORD=<password>
-POSTGRES_DB=<db>
+POSTGRES_USER=hello_django
+POSTGRES_PASSWORD=hello_django
+POSTGRES_DB=hello_django_dev
 ```
 
 3. Build and spin up the containers
@@ -67,62 +67,6 @@ The structure of `json` file:
 }
 ```
 
+6. Open `Places` app admin panel in browser [http://localhost:1337/admin/](http://localhost:1337/admin/)
 
-## Installation
-1. Clone project
-```bash
-git clone https://github.com/gennadis/afisha.git
-cd afisha
-```
-
-2. Create virtual environment
-```bash
-python3 -m venv venv
-source venv/bin/activate
-```
-
-3. Install requirements
-```bash
-pip install -r requirements.txt
-```
-
-4. Rename `example.env` to `.env` and fill your secrets in it.  
-```bash
-DJANGO_DEBUG=0  # [0, 1]
-DJANGO_SECRET_KEY=<secret>
-DJANGO_ALLOWED_HOSTS=<host1 host2>  #localhost 127.0.0.1 [::1]
-CSRF_TRUSTED_ORIGINS=<host1>  # localhost 127.0.0.1 [::1]
-
-SQL_ENGINE=<engine>  # django.db.backends.postgresql
-SQL_DATABASE=<database>
-SQL_USER=<user>
-SQL_PASSWORD=<password>
-SQL_HOST=<host>
-SQL_PORT=<port> # 5432
-```
-
-5. Rename `example.env.db` to `.env.db` and fill your secrets in it.  
-```bash
-POSTGRES_USER=<user>
-POSTGRES_PASSWORD=<password>
-POSTGRES_DB=<db>
-```
-
-6. Apply database migrations
-```bash
-python manage.py migrate
-```
-
-7. Create Django superuser
-```bash
-python manage.py createsuperuser
-```
-
-8. Run web server
-```bash
-python manage.py runserver
-```
-9. Open `Places` app admin panel in browser [http://127.0.0.1:8000/admin/](http://127.0.0.1:8000/admin/)
-
-10. Open frontend in browser [http://127.0.0.1:8000](http://127.0.0.1:8000)
-
+7. Open frontend in browser [http://localhost:1337](http://localhost:1337)
