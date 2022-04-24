@@ -10,14 +10,10 @@ class Place(models.Model):
     description_short = models.TextField(
         verbose_name="Short description",
         max_length=500,
-        blank=True,
-        null=True,
     )
     description_long = HTMLField(
         verbose_name="Long description",
         max_length=5000,
-        blank=True,
-        null=True,
     )
     longitude = models.FloatField(verbose_name="Longitude")
     latitude = models.FloatField(verbose_name="Latitude")
