@@ -87,12 +87,12 @@ WSGI_APPLICATION = "where_to_go.wsgi.application"
 
 DATABASES = {
     "default": {
-        "ENGINE": os.getenv("SQL_ENGINE", default="django.db.backends.sqlite3"),
-        "NAME": os.getenv("SQL_DATABASE", default=BASE_DIR / "db.sqlite3"),
-        "USER": os.getenv("SQL_USER", default="user"),
-        "PASSWORD": os.getenv("SQL_PASSWORD", default="password"),
-        "HOST": os.getenv("SQL_HOST", default="localhost"),
-        "PORT": os.getenv("SQL_PORT", default="5432"),
+        "ENGINE": os.getenv("SQL_ENGINE", "django.db.backends.sqlite3"),
+        "NAME": os.getenv("SQL_DATABASE", BASE_DIR / "db.sqlite3"),
+        "USER": os.getenv("SQL_USER", "user"),
+        "PASSWORD": os.getenv("SQL_PASSWORD", "password"),
+        "HOST": os.getenv("SQL_HOST", "localhost"),
+        "PORT": os.getenv("SQL_PORT", "5432"),
     }
 }
 
@@ -138,7 +138,9 @@ STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
 MEDIA_URL = "/media/"
 MEDIA_ROOT = os.path.join(BASE_DIR, "mediafiles")
 
-CSRF_TRUSTED_ORIGINS = os.getenv("CSRF_TRUSTED_ORIGINS", default="127.0.0.1").split(" ")
+CSRF_TRUSTED_ORIGINS = os.getenv(
+    "CSRF_TRUSTED_ORIGINS", default="http://127.0.0.1"
+).split(" ")
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
